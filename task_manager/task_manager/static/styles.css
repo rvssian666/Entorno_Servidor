@@ -1,0 +1,121 @@
+
+:root {
+    --bg-main: #1e1e1e;
+    --bg-secondary: #2a2a2a;
+    --text-normal: #dcddde;
+    --text-muted: #888888;
+    --accent: #7566f0; 
+    --border: #3e3e3e;
+    --hover: #333333;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-normal);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.obsidian-container {
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Header con icono y título alineados */
+header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.folder-icon {
+    font-size: 1.5rem;
+}
+
+/* Estilo del Formulario (Crear lista) */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: var(--text-normal);
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent);
+}
+
+input[type="submit"] {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Estilo de la Lista de Tareas */
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+ol li {
+    background-color: var(--bg-secondary);
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+ol li:hover {
+    border-color: var(--accent);
+    background-color: var(--hover);
+}
+
+ol li a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--text-normal);
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,44 @@
+{% load static %}<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas🧮</title>
+    <link rel="stylesheet" href={% static "styles.css" %}>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head> 
+<body>
+
+    <div class="obsidian-container">
+        <header>
+            <span class="folder-icon">📂</span>
+            <h1>Lista de Tareas </h1>
+            
+        </header>
+
+        <main>
+            <section class="list-section">
+               {% block content %}
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <input type="text"required name="name" placeholder="Nombre de la lista">
+                    <input type="submit" value="Crear lista">
+                </form>
+                <ol>
+                    {% for List in all_list %}
+                        <li>
+                            <a href="#">{{List.name}}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+               {% endblock  %}
+            </section>
+        </main>
+        
+        <footer>
+            <p>Made by Alexander.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
