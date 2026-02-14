@@ -1,0 +1,14 @@
+{% extends "index.html" %} {% block content %}
+<h1>Lista de tareas en {{task_list.name}}</h1>
+<form method="POST" action="{% url 'get_task' task_list.id %}">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Titulo de la tarea">
+    <input type="submit" value="Crear tarea">
+</form>
+<hr>
+    <ol>
+        {% for task in tasks %}
+            <li>{{task.title}}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

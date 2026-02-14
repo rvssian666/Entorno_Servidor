@@ -27,14 +27,14 @@ def delete_task_list(request,list_id):
  return redirect('all_list')
 
 # Obtener tareas de una lista
-def get_task(request, list_id):
-    task_list = get_object_or_404(TaskList, id=list_id)
+def get_task(request, lista_id):
+    task_list = get_object_or_404(TaskList, id=lista_id)
     if request.method == 'POST':
         title = request.POST.get('title')
         if title:
             new_task = Task(title=title)
             new_task.save()
-            return redirect('get_task', lista_id=list_id)  
+            return redirect('get_task', lista_id=lista_id)  
     tasks = task_list.task_set.all()
     return render(request, 'task.html', {
         'tasks': tasks, 
