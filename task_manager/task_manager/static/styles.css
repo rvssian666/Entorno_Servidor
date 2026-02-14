@@ -25,25 +25,24 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
+  
+
 /* Header con icono y título alineados */
 header {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    justify-content: space-between;
     margin-bottom: 30px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 15px;
 }
 
 header h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin: 0;
 }
 
-.folder-icon {
-    font-size: 1.5rem;
-}
+
 
 /* Estilo del Formulario (Crear lista) */
 form {
@@ -66,6 +65,7 @@ input[type="text"]:focus {
     border-color: var(--accent);
 }
 
+.home-button,
 input[type="submit"] {
     background: var(--accent);
     color: white;
@@ -76,6 +76,9 @@ input[type="submit"] {
     font-weight: 600;
     transition: opacity 0.2s;
 }
+.home-button:hover{
+    opacity: 1.1 ;
+}
 
 input[type="submit"]:hover {
     opacity: 0.9;
@@ -84,13 +87,13 @@ input[type="submit"]:hover {
 /* Estilo de la Lista de Tareas */
 ol {
     list-style: none;
-    padding: 0;
+    padding: 1rem;
 }
 
 ol li {
     background-color: var(--bg-secondary);
     margin-bottom: 8px;
-    border-radius: 6px;
+    border-radius: 3px;
     border: 1px solid var(--border);
     transition: all 0.2s ease;
 }
@@ -101,11 +104,18 @@ ol li:hover {
 }
 
 ol li a {
-    display: block;
+    display: inline-block;
+    margin-left: 1rem;
     padding: 12px 15px;
     color: var(--text-normal);
     text-decoration: none;
 }
+#delete-button{
+    display: inline-block;
+    margin-left: 50px;
+    
+}
+
 
 footer {
     margin-top: 50px;

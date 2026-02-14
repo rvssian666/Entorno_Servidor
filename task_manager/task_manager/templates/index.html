@@ -11,9 +11,11 @@
 
     <div class="obsidian-container">
         <header>
-            <span class="folder-icon">📂</span>
-            <h1>Lista de Tareas </h1>
             
+                <h1>📂 Lista de Tareas </h1>
+            <a href="{% url 'all_list'%}">
+            <button type="button" class="home-button">Volver Tareas</button>
+            </a>
         </header>
 
         <main>
@@ -27,9 +29,9 @@
                 <ol>
                     {% for List in all_list %}
                         <li>
-                            <a href="#">{{List.name}}</a>
+                            <a href="{% url 'get_task' List.id %}">{{List.name}}</a>
                             <a href="{% url 'delete_task_list' List.id %}" class="delete-link">
-                           <button> Eliminar!</button>
+                           <button id="delete-button"> Eliminar!</button>
                             </a>
                         </li>
                     {% endfor %}
