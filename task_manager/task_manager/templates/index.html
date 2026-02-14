@@ -28,6 +28,9 @@
                     {% for List in all_list %}
                         <li>
                             <a href="#">{{List.name}}</a>
+                            <a href="{% url 'delete_task_list' List.id %}" class="delete-link">
+                           <button> Eliminar!</button>
+                            </a>
                         </li>
                     {% endfor %}
                 </ol>
@@ -36,7 +39,7 @@
         </main>
         
         <footer>
-            <p>Made by Alexander.</p>
+            <p>Made by Alexander 💻.</p>
         </footer>
     </div>
 
